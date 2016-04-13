@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!Name : Sebastian Horoszkiewicz >
+<!Date : 20/02/2012 >
+<!Id   : C00156243>
+<html>
+<body>
+<head>
+<script>
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~Open Curren Acc.~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+function populateCA()//fills list box with data
+{
+	var e = document.getElementById("listbox");//gets values from 'listbox'
+	var strUser = e.options[e.selectedIndex].value;//returns selected index
+	var personDetails=strUser.split(',')//put string into array (,) -> next element/array num
+
+	document.getElementById("id").value=personDetails[0]//put everything up to first "," into "id"
+	document.getElementById("fname").value=personDetails[1]//put everything from first "," up to sec "," and store in fname
+	document.getElementById("sname").value=personDetails[2]//etc.
+	document.getElementById("addr").value=personDetails[3]
+}
+function opencurra()//when this method is called, button to open current acc was pressed so return some value if user will press 'ok' otherwise do nothing
+{
+	var r=confirm("Are You Sure?");//set text into 'box' and return true/false
+	if (r==true)//if user pressed 'ok' r=true
+	{
+		unFields();//unlock fields
+	}
+}
+function unFields()//unlocks fields
+{
+	document.getElementById("id").disabled = false;//unlocks id field
+	document.getElementById("fname").disabled = false;//unlocks fname field
+	document.getElementById("sname").disabled = false;//etc.
+	document.getElementById("addr").disabled = false;
+	val=true;//set val to true
+	document.getElementById('istrue').value = val;//put val into var 'istrue'
+}
+</script>
+</body>
+</html>

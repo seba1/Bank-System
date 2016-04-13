@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!Name : Sebastian Horoszkiewicz >
+<!Date : 28/02/2012 >
+<!Id   : C00156243>
+<html>
+<body>
+<head>
+<script>	
+function populateCIoOCA()//fills list box with data
+{
+	var e = document.getElementById("listbox");//gets values from 'listbox'
+	var strUser = e.options[e.selectedIndex].value;//returns selected index
+	var personDetails=strUser.split(',')//put string into array (,) -> next element/array num
+
+	document.getElementById("accNum").value=personDetails[0]//put everything up to first "," into "id"
+	document.getElementById("amOverdrawn").value=personDetails[1]//put everything from first "," up to sec "," and store in amOverdrawn
+	document.getElementById("overdraftLim").value=personDetails[2]//etc.
+	document.getElementById("cAccInterestR").value=personDetails[3]
+	
+}
+function unlockFields()//unlock fields
+{	
+	document.getElementById("accNum").disabled = false;//unlock field
+	document.getElementById("amOverdrawn").disabled = false;//unlock field
+	document.getElementById("overdraftLim").disabled = false;//...
+	document.getElementById("cAccInterestR").disabled = false;
+}
+function chargeInt()
+{
+	var val="";//initialize variable
+	var r=confirm("Are You Sure?");//set text into 'box' and return true/false
+	if (r==true)//if user pressed 'ok' r=true
+	{
+		unlockFields();//unlock fields
+		val="true";//set value to 'true'
+		document.getElementById("iit").value =val;//set above value into 'istrue'
+	}
+}
+</script>
+</body>
+</html>

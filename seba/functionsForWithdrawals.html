@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!Name : Sebastian Horoszkiewicz >
+<!Date : 20/02/2012 >
+<!Id   : C00156243>
+<html>
+<body>
+<head>
+<script>
+function populate()//fills list box with data
+{
+	var e = document.getElementById("listbox");//gets values from 'listbox'
+	var strUser = e.options[e.selectedIndex].value;//returns selected index
+	var personDetails=strUser.split(',')//put string into array (,) -> next element/array num
+
+	document.getElementById("id").value=personDetails[0]//put everything up to first "," into "id"
+	document.getElementById("fname").value=personDetails[1]//put everything from first "," up to sec "," and store in fname
+	document.getElementById("sname").value=personDetails[2]//etc.
+	document.getElementById("AccNum").value=personDetails[4]
+	document.getElementById("Balance").value=personDetails[5]
+	document.getElementById("Overdrawn").value=personDetails[6]
+	document.getElementById("DepAccNum").value=personDetails[7]
+	document.getElementById("DepBal").value=personDetails[8]
+	document.getElementById("overdraftLim").value=personDetails[9]
+}
+function fromCurrAcc()//if this method is called, curr acc button was pressed so return some value if user will press 'ok' otherwise do nothing
+{
+	var validAm = checkWAm();//check is widthdraw amount inputed, if not return true and prompt with alert box
+	if (validAm==false)//if it's true do not preceed
+	{
+		var val="";//initialize variable
+		var r=confirm("Are You Sure?");//set text into 'box' and return true/false
+
+		if (r==true)//if user pressed 'ok' r=true
+		{
+			unlockFieldsOnCa();//unlock fields
+			val="currAcc";//set value to 'currAcc'
+			document.getElementById('withdr').value = val;//set this value into 'withdr'
+		}
+	}
+}
+function fromDepAcc()//if this method is called, deposit acc button was pressed so return some value if user will press 'ok' otherwise do nothing
+{
+	var validAm=checkWAm();//check is widthdraw amount inputed, if not return true and prompt with alert box
+	if (validAm==false)//if it's true do not preceed
+	{
+		var val="";//initialize variable
+		var r=confirm("Are You Sure?");//set text into 'box' and return true/false
+
+		if (r==true)//if user pressed 'ok' r=true
+		{
+			unlockFieldsOnDep();//unlock fields
+			val="depAcc";//set value to 'depAcc'
+			document.getElementById('withdr').value = val;//set this value into 'withdr'
+		}
+	}
+}
+function unlockFieldsOnCa()//unlocks fields if acc number field is not empty
+{	
+	document.getElementById("id").disabled = false;//unlock field (set disabled to false) for 'id'
+	document.getElementById("fname").disabled = false;//etc.
+	document.getElementById("sname").disabled = false;
+	document.getElementById("Balance").disabled = false;
+	document.getElementById("Overdrawn").disabled = false;
+	document.getElementById("AccNum").disabled = false;
+	document.getElementById("DepAccNum").disabled = false;
+	document.getElementById("DepBal").disabled = false;
+	document.getElementById("overdraftLim").disabled = false;
+}
+function unlockFieldsOnDep()//unlocks fields if deposit number field is not empty
+{	
+	document.getElementById("id").disabled = false;//unlock field (set disabled to false) for 'id'
+	document.getElementById("fname").disabled = false;//etc.
+	document.getElementById("sname").disabled = false;
+	document.getElementById("Balance").disabled = false;
+	document.getElementById("Overdrawn").disabled = false;
+	document.getElementById("AccNum").disabled = false;
+	document.getElementById("DepAccNum").disabled = false;
+	document.getElementById("DepBal").disabled = false;
+	document.getElementById("overdraftLim").disabled = false;
+}
+function checkWAm()//check value in 'withdrawAmount' and 'id' and prompt with alert if it's not greater than 0 or if customer id field is empty
+{
+	var validAm=false//initialize to false
+	var ide=document.forms["myForm"]["id"].value;//get value from 'id' input box
+	if(ide=="")//if id is empty then display aler message
+	{	
+		alert("Please Choose a Customer.");//set text into alert box
+		validAm=true;//return true(customer does not exist)
+		document.getElementById("id").value = "";//insert empty value into id field(otherwise program does not work as it should(and thats the easy way to get over that error))
+	}
+	else
+	{
+		var wAm=document.forms["myForm"]["withdrawAmount"].value;//get value from 'withdrawAmount' input box
+		wAm = parseFloat(wAm)//convert to float number	
+		if(wAm<=0)//if input is 0 or less do nothing
+		{
+			alert("Please Enter Amount to Withdraw!");//set text into alert box
+			validAm=true;//return true (input is 0 or less)
+		}
+	}
+	return validAm;//returns true/false
+}
+</script>
+</body>
+</html>

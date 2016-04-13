@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!Name : Sebastian Horoszkiewicz >
+<!Date : 20/02/2012 >
+<!Id   : C00156243>
+<html>
+<body>
+<head>
+<script>
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~Update Curren Acc.~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+function populateUpdateCA()//fills list box with data
+{
+	var e = document.getElementById("listbox");//gets values from 'listbox'
+	var strUser = e.options[e.selectedIndex].value;//returns selected index
+	var personDetails=strUser.split(',')//put string into array (,) -> next element/array num
+
+	document.getElementById("id").value=personDetails[0]//put everything up to first "," into "id"
+	document.getElementById("fname").value=personDetails[1]//put everything from first "," up to sec "," and store in fname
+	document.getElementById("sname").value=personDetails[2]//etc.
+	document.getElementById("AccNum").value=personDetails[3]
+	document.getElementById("addr").value=personDetails[4]
+	document.getElementById("Balance").value=personDetails[5]
+	document.getElementById("Overdrawn").value=personDetails[6]
+	document.getElementById("overdraftLim").value=personDetails[7]
+}
+function updatecaol()//when this method is called, button to update current acc was pressed so return some value if user will press 'ok' otherwise do nothing
+{
+	var val="";//initialize variable
+	var r=confirm("Are You Sure?");//set text into 'box' and return true/false
+	if (r==true)//if user pressed 'ok' r=true
+	{
+		unlockFieldsOnUCa();//unlock fields
+		val=true;//set value to 'true'
+		document.getElementById('istrue').value = val;//set above value into 'istrue'
+	}
+}
+function unlockFieldsOnUCa()//unlocks fields
+{	
+	document.getElementById("id").disabled = false;//unlocks id field
+	document.getElementById("fname").disabled = false;//unlocks fname field
+	document.getElementById("sname").disabled = false;//etc.
+	document.getElementById("addr").disabled = false;
+	document.getElementById("Balance").disabled = false;
+	document.getElementById("Overdrawn").disabled = false;
+	document.getElementById("AccNum").disabled = false;
+	document.getElementById("overdraftLim").disabled = false;
+}
+function enableBtn()//if enable button is pressed, unlock overdraft limit field
+{
+	document.getElementById("overdraftLim").disabled = false;//unlocks overdraftLim field
+}
+function disableBtn()//if disable button is pressed, unlock overdraft limit field
+{
+	document.getElementById("overdraftLim").disabled = true;//locks overdraftLim field
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!Name : Sebastian Horoszkiewicz >
+<!Date : 20/02/2012 >
+<!Id   : C00156243>
+<style>
+body/*body properties*/ 
+	{
+		background-image:url('/metalbluebackgrounds1.jpg');/*set background image*/
+		color:white;/*set text colour*/
+	}
+h2  /*h2 properties*/
+	{
+		text-decoration:underline/*set h2 titles to be underlined*/
+	}
+/*~~~~~~~~~~Charge Interest on Current Account~~~~~~~~~~*/
+.ridgeForCIoOCA/*name*/
+	{
+		border-style:ridge;/*border style*/
+		width: 420px;/*size*/
+		height: 240px;/*size*/
+	}
+/*~~~~~~~~~~Update Current Account~~~~~~~~~~*/
+.ridgeForUpdateCA
+	{
+		border-style:ridge;/*border style*/
+		width: 420px;/*size*/
+		height: 445px;
+	}
+/*~~~~~~~~~~Close Current Account~~~~~~~~~~*/
+.ridgeForCloseAcc
+	{
+		border-style:ridge;/*as above*/
+		width: 420px;
+		height: 365px;
+	}
+
+/*~~~~~~~~~~Open Current Account~~~~~~~~~~*/
+.ridgeFOC
+	{
+		border-style:ridge;
+		width: 420px;
+		height: 360px;
+	}
+/*~~~~~~~~~~~~~~~~Withdrawals~~~~~~~~~~~~~*/
+.ridge
+	{
+		border-style:ridge;
+		width: 420px;
+		height: 430px;
+	}
+/*~~~~~~~~~~~~~~~~ ALL ~~~~~~~~~~~~~*/
+.textalignR
+	{
+		text-align:right;
+	}
+button,
+.button
+{
+	cursor : pointer;	/*changes cursor shape when its on the button*/
+	/*below part > sets size of btn, size of "cut" of edges, padding, shadow etc. */
+	border-style : solid;/*border style*/
+	border-width : 1px;/*size*/
+	border-radius : 50px;/*size of 'cuting' of edges*/
+	padding : 10px 18px;/*padding*/
+	box-shadow : 0 1px 4px rgba(0,0,0,.6);/*shadow parameters*/
+	font-size : 8.5pt;/*font sieze*/
+	font-weight : bold;/*bold*/
+	color : #fff;/*color-white*/
+	text-shadow : 0 1px 3px rgba(0,0,0,.4);/*as above*/
+	font-family : sans-serif;/*font type*/
+}
+button.blue,
+.button.blue 
+{
+	border-color : #2989d8;/*color dark/light blue*/
+	background: #2989d8;/*color dark/light blue*/
+	
+	/* Below part : changes background of btn from light blue to dark blue
+	   (including different browsers)*/
+	   
+	/*IE10*/
+	background-image: -ms-linear-gradient(top, #2989d8 10%,#1e5799 100%); /*set button colour to light blue->darkblue*/
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #2989d8 10%, #1e5799 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #2989d8 10%, #1e5799 100%);
+	/*Safari/Chrome 10*/ 
+	background: -webkit-gradient(linear, left top, left bottom, 
+	color-stop(10%,#2989d8), color-stop(100%,#1e5799));
+	/*Chrome 11+*/ 
+	background-image: -webkit-linear-gradient(top, #2989d8 10%, #1e5799 100%);
+	/*IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #2989d8 10%, #1e5799 100%);
+}
+button.green,
+.button.green 
+{
+	border-color: #8fc800;		/* button border color */
+	background: #8fc800;		/* background color */
+	/*the same as button above (only different color - light green to dark green) */
+	/*IE10*/
+	background-image: -ms-linear-gradient(top, #8fc800 0%, #438c00 100%);/*as above*/
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #8fc800 0%, #438c00 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #8fc800 0%, #438c00 100%);
+	/*Safari/Chrome 10*/ 
+	background: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,#8fc800), color-stop(100%,#438c00));
+	/*Chrome 11+*/ 
+	background-image: -webkit-linear-gradient(top, #8fc800 0%, #438c00 100%);
+	/*IE10 Release Preview*/ 
+	background-image: linear-gradient(to bottom, #8fc800 0%, #438c00 100%);
+}
+button.red,
+.button.red 
+{
+	border-color: #4c4c4c;		/* button border color */
+	background: #b30000;		/* background color */
+	/*the same as button above (only different color - light green to dark green) */
+	/*IE10*/ 
+	background-image: -ms-linear-gradient(top, #4c4c4c 0%, #b30000 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #4c4c4c 0%, #b30000 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #4c4c4c 0%, #b30000 100%);
+	/*Safari/Chrome 10 */ 
+	background: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,#4c4c4c), color-stop(100%,#b30000));
+	/*Chrome 11+ */ 
+	background-image: -webkit-linear-gradient(top, #4c4c4c 0%, #b30000 100%);
+	/*IE10 Release Preview*/ 
+	background-image: linear-gradient(to bottom, #4c4c4c 0%, #b30000 100%);
+}
+</style>

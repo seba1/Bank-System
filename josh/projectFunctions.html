@@ -1,0 +1,87 @@
+<!-- Name: 	Joshua Eisikovits -->
+<!-- ID :	C00156665 -->
+<!-- projectFunctions.html -->
+
+<html>		<!-- start html -->
+<body>		<!-- start body -->
+<head>		<!-- start head -->
+<script>	<!-- start script -->
+
+//function for select list (drop down)
+function emulate()
+{
+	var e = document.getElementById("listbox");
+	
+	var stringUser = e.options[e.selectedIndex].value;
+	
+	var customerDetails = stringUser.split(',')
+	
+	//get information by obtaining ID from each
+	document.getElementById("idAmend").value=customerDetails[0]
+	
+	document.getElementById("firstNameAmend").value=customerDetails[1]
+	
+	document.getElementById("amendSurname").value=customerDetails[2]
+	
+	document.getElementById("amendAddress").value=customerDetails[3]
+	
+	document.getElementById("amendTel").value=customerDetails[4]
+	
+	document.getElementById("amendOcc").value=customerDetails[5]
+
+	document.getElementById("amendSal").value=customerDetails[6]
+	
+	document.getElementById("amendGua").value=customerDetails[7]
+
+}//end function
+
+
+//validation form (Are you sure you want to do this) (Delete.php)
+function formValidate()
+{
+	var awnser = confirm("Are You Sure You Want To Delete?")
+	if(awnser=true)
+	{
+		document.getElementById("idAmend").disabled = false;
+
+	}
+
+}//end function formValidate
+
+
+//When Amend Button Clicked Fields Unlock For Changes (Amend.php)
+function unlock()
+{
+                
+		document.getElementById("firstNameAmend").disabled = false;
+		document.getElementById("amendSurname").disabled = false;
+		document.getElementById("amendAddress").disabled = false;
+		document.getElementById("amendTel").disabled = false;
+		document.getElementById("amendOcc").disabled = false;
+		document.getElementById("amendSal").disabled = false;
+		document.getElementById("amendGua").disabled = false;
+}//end function unlock
+
+//validation form (Are you sure you want to do this) (AddCustomer.php)
+function formAdd()
+{
+	var awnser = confirm("Are You Sure You Want To Add?")
+
+}//end function
+
+//function to validate and confirm changes to amend.php
+function verifyChange()
+{
+	var awnser = confirm("Are You Sure You Want To Change Details?")
+	if(awnser=true)
+	{
+		document.getElementById("idAmend").disabled = false;
+	}//end if
+}//end function
+
+
+
+</script>	<!-- end script -->
+</head>		<!-- end  head -->
+</body>		<!-- end body -->
+</html>		<!-- end html -->
